@@ -257,7 +257,7 @@ decision_destroy_habitat = {
 	resources = {
 		category = decisions
 		cost = {
-			unity = 100
+			unity = 500
 		}
 	}
 
@@ -271,15 +271,25 @@ decision_destroy_habitat = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "decision_destroy_habitat_must_be_empty"
-			NOT = { any_owned_pop_group = { always = yes } }
+			is_colony = no
 		}
 	}
 
 	effect = {
-		# Refund a small portion of alloys
+		# Refund alloys based on shipset type
+		# This is by default a 33% refund
 		owner = {
-			add_resource = { alloys = 200 }
+			if = {
+				limit = {
+					country_uses_bio_ships = yes
+				}
+				add_resource = { alloys = 250 }
+			}
+			else = {
+				add_resource = { alloys = 500 }
+			}
 		}
+
 		# Remove all habitat megastructures in this system
 		solar_system = {
 			every_megastructure = {
