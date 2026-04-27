@@ -3,7 +3,7 @@
 ##########################################################################
 
 NGameplay = {
-	# Reduce the base influence cost of building an outpost (claiming a system) from 75 to 25.
-	# This also reduces the colony abandon cost, which uses the same base value.
-	EXPANSION_COST_BASE = 25.0
+	# Reduce the influence surcharge for resettling the last pop from a colony
+	# (i.e. the colony abandon cost) from 200 to 25.
+	RESETTLE_DESTROY_COLONY_COST = 25
 }
