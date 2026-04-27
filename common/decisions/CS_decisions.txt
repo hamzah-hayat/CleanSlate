@@ -66,7 +66,7 @@ decision_clear_world = {
 # Resettles all pops on this planet to other planets in the same sector.
 # If this is the only planet in the sector, sends pops to a random other sector.
 decision_expel_population = {
-	icon = decision_resources
+	icon = decision_expel_population
 	sound = event_administrative_work
 
 	enactment_time = 30
@@ -74,7 +74,8 @@ decision_expel_population = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 100
+			influence = 25
+			unity = 500
 		}
 	}
 
@@ -95,56 +96,54 @@ decision_expel_population = {
 	}
 
 	effect = {
-		planet = {
-			# Save this planet's sector for comparison
-			sector = { save_event_target_as = cs_expel_source_sector }
+		custom_tooltip = decision_expel_population_effect_tooltip
+		hidden_effect = {
+			planet = {
+				# Save planet as event target for comparison
+				save_event_target_as = cs_expel_source_planet
+				# Save this planet's sector for comparison
+				sector = { save_event_target_as = cs_expel_source_sector }
 
-			# Check if there are other planets in the same sector
-			if = {
-				limit = {
-					owner = {
-						any_owned_planet = {
-							NOT = { is_same_value = prev.prev }
-							sector = { is_same_value = event_target:cs_expel_source_sector }
+				# Check if there are other planets in the same sector
+				if = {
+					limit = {
+						owner = {
+							any_owned_planet = {
+								NOT = { is_same_value = event_target:cs_expel_source_planet }
+								sector = { is_same_value = event_target:cs_expel_source_sector }
+							}
 						}
 					}
-				}
-				every_owned_pop_group = {
-					save_event_target_as = cs_expel_pop_group
-					planet = {
+					# Move pops to random planets in same sector
+					every_owned_pop_group = {
+						save_event_target_as = cs_expel_pop_group
 						owner = {
 							random_owned_planet = {
 								limit = {
-									NOT = { is_same_value = prev.prev.prev }
+									NOT = { is_same_value = event_target:cs_expel_source_planet}
 									sector = { is_same_value = event_target:cs_expel_source_sector }
 								}
 								resettle_pop_group = {
 									POP_GROUP = event_target:cs_expel_pop_group
 									PLANET = this
+									PERCENTAGE = 100
 								}
 							}
 						}
 					}
 				}
-			}
-			else = {
-				# No other planets in this sector — send to a random other sector
-				every_owned_pop_group = {
-					save_event_target_as = cs_expel_pop_group
-					planet = {
+				else = {
+					# No other planets in this sector — send to a random other planet, doesn't matter where
+					every_owned_pop_group = {
+						save_event_target_as = cs_expel_pop_group
 						owner = {
-							random_owned_sector = {
-								limit = {
-									NOT = { is_same_value = event_target:cs_expel_source_sector }
-									any_owned_planet = { always = yes }
-								}
 								random_owned_planet = {
 									resettle_pop_group = {
 										POP_GROUP = event_target:cs_expel_pop_group
 										PLANET = this
+										PERCENTAGE = 100
 									}
 								}
-							}
 						}
 					}
 				}
@@ -218,13 +217,6 @@ decision_rapid_construction_disable = {
 
 	enactment_time = 0
 
-	resources = {
-		category = decisions
-		cost = {
-			unity = 0
-		}
-	}
-
 	potential = {
 		owner = { is_ai = no }
 		has_planet_flag = cs_rapid_construction_active
@@ -234,10 +226,23 @@ decision_rapid_construction_disable = {
 
 	effect = {
 		remove_planet_flag = cs_rapid_construction_active
-		remove_modifier = cs_rapid_construction_t1
-		remove_modifier = cs_rapid_construction_t2
-		remove_modifier = cs_rapid_construction_t3
-		remove_modifier = cs_rapid_construction_t4
+
+		if = {
+			limit = { has_modifier = cs_rapid_construction_t1 }
+			remove_modifier = cs_rapid_construction_t1
+		}
+		if = {
+			limit = { has_modifier = cs_rapid_construction_t2 }
+			remove_modifier = cs_rapid_construction_t2
+		}
+		if = {
+			limit = { has_modifier = cs_rapid_construction_t3 }
+			remove_modifier = cs_rapid_construction_t3
+		}
+		if = {
+			limit = { has_modifier = cs_rapid_construction_t4 }
+			remove_modifier = cs_rapid_construction_t4
+		}
 	}
 
 	ai_weight = {

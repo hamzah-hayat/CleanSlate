@@ -3,16 +3,17 @@
   decision_clear_world_desc:0 "This world requires a clean slate. We will expedite the removal of all structures and resources, allowing us to start anew."
 
   # Edicts
-  edict_cs_accelerated_genetic_modification:0 "Accelerated Genetic Modification"
-  edict_cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate genetic research and population growth. Our scientists gain additional trait points for modifications, and organic pop assembly is increased."
+  edict_cs_accelerated_genetic_modification:0 "Exotic Gases for Genetic Modification"
+  edict_cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate genetic changes across our population."
 
-  edict_cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
-  edict_cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure they remain... compliant throughout the process. No resistance. No delays. Just the quiet efficiency of populations that fade away without struggle. The work proceeds much faster when they can't fight what's coming."
+  edict_cs_accelerated_purge_protocols:0 "Exotic Gases for Purging Protocols"
+  edict_cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure that undesirable population groups are kept in a blissfully unaware mental state as we enact our purge protocols, making the overall process much easier for our enforcers."
 
   # Decisions
   decision_expel_population:0 "Expel Population"
   decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random sector instead."
   decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
+  decision_expel_population_effect_tooltip:0 "All population groups on this world will be forcibly resettled to other planets within our sector. If no other planets exist in this sector, they will be dispersed across our empire."
 
   decision_rapid_construction_enable:0 "Enable Rapid Construction"
   decision_rapid_construction_enable_desc:0 "Redirect industrial resources to dramatically accelerate construction on this world. Building speed is greatly increased, but so are building costs. The boost scales with our engineering technology. Cannot be activated while buildings are under construction."
