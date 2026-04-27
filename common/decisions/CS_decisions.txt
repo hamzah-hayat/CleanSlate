@@ -249,3 +249,59 @@ decision_rapid_construction_disable = {
 		weight = 0
 	}
 }
+
+# Decision: Demolish Habitat
+# Permanently destroys an empty habitat, refunding a small portion of alloys.
+# The habitat must have no population before demolition can begin.
+decision_destroy_habitat = {
+	icon = decision_burning_settlement
+	sound = event_structural_collapse
+
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 100
+		}
+	}
+
+	potential = {
+		owner = { is_ai = no }
+		is_planet_class = pc_habitat
+	}
+
+	owned_planets_only = yes
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "decision_destroy_habitat_must_be_empty"
+			NOT = { any_owned_pop_group = { always = yes } }
+		}
+	}
+
+	effect = {
+		# Refund a small portion of alloys
+		owner = {
+			add_resource = { alloys = 200 }
+		}
+		# Remove all habitat megastructures in this system
+		solar_system = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = habitat_central_complex
+						is_megastructure_type = habitat_central_complex_restored
+						is_megastructure_type = habitat_major_orbital
+						is_megastructure_type = habitat_minor_orbital
+					}
+				}
+				remove_megastructure = this
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
