@@ -2,44 +2,6 @@
 # Clean Slate Policies
 ##########################################################################
 
-# Policy: Sub-Species Auto-Integration
-# Allows the player to set whether sub-species are automatically integrated
-# into the default/primary species over time.
-policy_subspecies_auto_integration = {
-	potential = {
-		is_ai = no
-		has_technology = tech_gene_tailoring
-	}
-
-	option = {
-		name = "policy_subspecies_auto_integration_disabled"
-
-		policy_flags = {
-			subspecies_auto_integration_disabled
-		}
-
-		ai_weight = {
-			weight = 100
-		}
-	}
-
-	option = {
-		name = "policy_subspecies_auto_integration_enabled"
-
-		policy_flags = {
-			subspecies_auto_integration_enabled
-		}
-		
-		on_enabled = {
-			country_event = { id = cs_subspecies.1 }
-		}
-
-		ai_weight = {
-			weight = 0
-		}
-	}
-}
-
 # Policy: Auto-Build Starbases
 # Automatically directs idle construction ships to build starbases in unclaimed systems.
 policy_auto_build_starbases = {

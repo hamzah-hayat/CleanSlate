@@ -3,11 +3,11 @@
   decision_clear_world_desc:0 "This world requires a clean slate. We will expedite the removal of all structures and resources, allowing us to start anew."
 
   # Edicts
-  cs_accelerated_genetic_modification:0 "Accelerated Genetic Modification"
-  cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate the rate at which our population undergoes genetic modification. Sub-species will be integrated into our primary species at an increased rate."
+  edict_cs_accelerated_genetic_modification:0 "Accelerated Genetic Modification"
+  edict_cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate genetic research and population growth. Our scientists gain additional trait points for modifications, and organic pop assembly is increased."
 
-  cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
-  cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure they remain... compliant throughout the process. No resistance. No delays. Just the quiet efficiency of populations that fade away without struggle. The work proceeds much faster when they can't fight what's coming."
+  edict_cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
+  edict_cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure they remain... compliant throughout the process. No resistance. No delays. Just the quiet efficiency of populations that fade away without struggle. The work proceeds much faster when they can't fight what's coming."
 
   # Decisions
   decision_expel_population:0 "Expel Population"
@@ -37,19 +37,9 @@
   decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction. The habitat must be completely empty before demolition can begin."
   decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
 
-  # Policies
-  policy_subspecies_auto_integration:0 "Sub-Species Integration"
-  policy_subspecies_auto_integration_desc:0 "Determines whether sub-species of our primary species are automatically integrated into the dominant species over time."
-
-  policy_subspecies_auto_integration_disabled:0 "No Automatic Integration"
-  policy_subspecies_auto_integration_disabled_desc:0 "Sub-species will not be automatically integrated into the primary species. Their genetic identity will be preserved."
-
-  policy_subspecies_auto_integration_enabled:0 "Automatic Integration"
-  policy_subspecies_auto_integration_enabled_desc:0 "Sub-species of our primary species will automatically be integrated, gradually merging them into the dominant species. Integration speed is increased."
-
   # Auto-Build Starbase Policy
-  policy_auto_build_starbases:0 "Automatic Starbase Construction"
-  policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
+  policy_policy_auto_build_starbases:0 "Automatic Starbase Construction"
+  policy_policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
 
   policy_auto_build_starbases_disabled:0 "Disabled"
   policy_auto_build_starbases_disabled_desc:0 "Construction ships will not automatically build starbases."
@@ -58,11 +48,11 @@
   policy_auto_build_starbases_adjacent_desc:0 "Idle construction ships will automatically build starbases in unclaimed systems that are one hyperlane jump from our existing starbases."
 
   policy_auto_build_starbases_all:0 "All Reachable Systems"
-  policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system within our borders, provided we can afford the influence cost."
+  policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system they can reach, provided we can afford the influence cost."
 
   # Auto-Build Hyper Relay Policy
-  policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
-  policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
+  policy_policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
+  policy_policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
 
   policy_auto_build_hyper_relays_disabled:0 "Disabled"
   policy_auto_build_hyper_relays_disabled_desc:0 "Construction ships will not automatically build hyper relays."
