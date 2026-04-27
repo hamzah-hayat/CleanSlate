@@ -1,0 +1,9 @@
+##########################################################################
+# Clean Slate Defines Overrides
+##########################################################################
+
+NGameplay = {
+	# Reduce the base influence cost of building an outpost (claiming a system) from 75 to 25.
+	# This also reduces the colony abandon cost, which uses the same base value.
+	EXPANSION_COST_BASE = 25.0
+}
