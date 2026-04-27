@@ -1,3 +1,7 @@
+##########################################################################
+# Clean Slate Decisions
+##########################################################################
+
 decision_clear_world = {
 	icon = decision_burning_settlement
 	sound = event_structural_collapse
@@ -21,65 +25,33 @@ decision_clear_world = {
 
 	effect = {
 		planet = {
-			# Remove all buildings
+			# Remove all buildings and districts
+			# (zones are automatically cleared when districts are removed)
 			remove_all_buildings = yes
-			# Remove all districts
 			remove_all_districts = yes
-			# Remove all zone specialisations from all districts
-			every_district = {
-				remove_zone = {
-					district = this
-					all = yes
-				}
-			}
 
-			# Make sure to re-add the capital building
+			# Re-add the appropriate capital building
 			hidden_effect = {
-				# We have the following capitals we can re-add
-				# Habitat capitals - Habitats
-				# Standard capitals - Non-Hive Empires
-				# Hive capitals - Hive Empires
-				# Machine Capitals - Machine Empires
 				if = {
-					limit = {
-						is_planet_class = pc_habitat
-					}
+					limit = { is_planet_class = pc_habitat }
 					add_building = building_hab_capital
 				}
 				else_if = {
-					limit = { 
-						owner = {
-							is_regular_empire = yes
-						}
-					}
+					limit = { owner = { is_regular_empire = yes } }
 					add_building = building_colony_shelter
 				}
 				else_if = {
-					limit = { 
-						owner = {
-							is_hive_empire = yes
-						}
-					}
+					limit = { owner = { is_hive_empire = yes } }
 					add_building = building_hive_capital
 				}
 				else_if = {
-					limit = { 
-						owner = {
-							is_wilderness_empire = yes
-						}
-					}
+					limit = { owner = { is_wilderness_empire = yes } }
 					add_building = building_colony_shelter_wilderness
 				}
 				else_if = {
-					limit = { 
-						owner = {
-							is_machine_empire = yes
-						}
-					}
+					limit = { owner = { is_machine_empire = yes } }
 					add_building = building_deployment_post
 				}
-
-				# Just in case
 				validate_planet_buildings_and_districts = yes
 			}
 		}
@@ -90,9 +62,12 @@ decision_clear_world = {
 	}
 }
 
+# Decision: Expel Population
+# Resettles all pops on this planet to other planets in the same sector.
+# If this is the only planet in the sector, sends pops to a random other sector.
 decision_expel_population = {
-	icon = decision_resettle_pops
-	sound = event_administrative
+	icon = decision_resources
+	sound = event_administrative_work
 
 	enactment_time = 30
 
@@ -104,11 +79,8 @@ decision_expel_population = {
 	}
 
 	potential = {
-		owner = {
-			is_ai = no
-		}
-		# Must have pops to expel
-		num_pops > 0
+		owner = { is_ai = no }
+		any_owned_pop_group = { always = yes }
 	}
 
 	owned_planets_only = yes
@@ -117,50 +89,39 @@ decision_expel_population = {
 		custom_tooltip = {
 			fail_text = "decision_expel_population_no_destination"
 			owner = {
-				# Either there are other planets in the same sector, or there are other sectors with planets
-				OR = {
-					# Other planets in the same sector
-					any_owned_planet = {
-						NOT = { is_same_value = prev.prev }
-						sector = { is_same_value = prev.prev.sector }
-						num_pops > 0
-					}
-					# Other sectors with planets
-					any_owned_sector = {
-						NOT = { is_same_value = prev.prev.sector }
-						any_owned_planet = {
-							num_pops > 0
-						}
-					}
-				}
+				count_owned_sector = { count > 1 }
 			}
 		}
 	}
 
 	effect = {
 		planet = {
+			# Save this planet's sector for comparison
+			sector = { save_event_target_as = cs_expel_source_sector }
+
 			# Check if there are other planets in the same sector
 			if = {
 				limit = {
 					owner = {
 						any_owned_planet = {
 							NOT = { is_same_value = prev.prev }
-							sector = { is_same_value = prev.prev.sector }
+							sector = { is_same_value = event_target:cs_expel_source_sector }
 						}
 					}
 				}
-				# Resettle all pop groups to other planets in the same sector
 				every_owned_pop_group = {
 					save_event_target_as = cs_expel_pop_group
-					owner = {
-						random_owned_planet = {
-							limit = {
-								NOT = { is_same_value = prev.prev }
-								sector = { is_same_value = prev.prev.sector }
-							}
-							resettle_pop_group = {
-								POP_GROUP = event_target:cs_expel_pop_group
-								PLANET = this
+					planet = {
+						owner = {
+							random_owned_planet = {
+								limit = {
+									NOT = { is_same_value = prev.prev.prev }
+									sector = { is_same_value = event_target:cs_expel_source_sector }
+								}
+								resettle_pop_group = {
+									POP_GROUP = event_target:cs_expel_pop_group
+									PLANET = this
+								}
 							}
 						}
 					}
@@ -170,18 +131,18 @@ decision_expel_population = {
 				# No other planets in this sector — send to a random other sector
 				every_owned_pop_group = {
 					save_event_target_as = cs_expel_pop_group
-					owner = {
-						random_owned_sector = {
-							limit = {
-								NOT = { is_same_value = prev.prev.sector }
-								any_owned_planet = {
-									always = yes
+					planet = {
+						owner = {
+							random_owned_sector = {
+								limit = {
+									NOT = { is_same_value = event_target:cs_expel_source_sector }
+									any_owned_planet = { always = yes }
 								}
-							}
-							random_owned_planet = {
-								resettle_pop_group = {
-									POP_GROUP = event_target:cs_expel_pop_group
-									PLANET = this
+								random_owned_planet = {
+									resettle_pop_group = {
+										POP_GROUP = event_target:cs_expel_pop_group
+										PLANET = this
+									}
 								}
 							}
 						}
@@ -196,12 +157,12 @@ decision_expel_population = {
 	}
 }
 
-# Toggle decision: Rapid Construction Mode
+# Toggle decision: Enable Rapid Construction Mode
 # Increases building speed at the cost of increased building costs.
-# Scales with city engineering tech level. Cannot be taken while buildings are under construction.
+# Scales with engineering tech level. Cannot be taken while buildings are under construction.
 decision_rapid_construction_enable = {
-	icon = decision_industrial_development
-	sound = event_administrative
+	icon = decision_resources
+	sound = event_administrative_work
 
 	enactment_time = 0
 
@@ -220,7 +181,6 @@ decision_rapid_construction_enable = {
 	owned_planets_only = yes
 
 	allow = {
-		# Cannot activate while any building is under construction
 		custom_tooltip = {
 			fail_text = "decision_rapid_construction_no_buildings_under_construction"
 			NOT = { has_building_construction = yes }
@@ -229,53 +189,24 @@ decision_rapid_construction_enable = {
 
 	effect = {
 		set_planet_flag = cs_rapid_construction_active
-		# Apply the modifier based on tech level
 		if = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			# Tier 5: 1000% speed, 1000% cost
-			add_modifier = {
-				modifier = cs_rapid_construction_t5
-				days = -1
-			}
+			limit = { owner = { has_technology = tech_construction_templates } }
+			add_modifier = { modifier = cs_rapid_construction_t5 days = -1 }
 		}
 		else_if = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			# Tier 4: 700% speed, 700% cost
-			add_modifier = {
-				modifier = cs_rapid_construction_t4
-				days = -1
-			}
+			limit = { owner = { has_technology = tech_assembly_pattern } }
+			add_modifier = { modifier = cs_rapid_construction_t4 days = -1 }
 		}
 		else_if = {
-			limit = {
-				owner = { has_technology = tech_construction_1 }
-			}
-			# Tier 3: 400% speed, 400% cost
-			add_modifier = {
-				modifier = cs_rapid_construction_t3
-				days = -1
-			}
+			limit = { owner = { has_technology = tech_global_production_strategy } }
+			add_modifier = { modifier = cs_rapid_construction_t3 days = -1 }
 		}
 		else_if = {
-			limit = {
-				owner = { has_technology = tech_basic_industry }
-			}
-			# Tier 2: 300% speed, 300% cost
-			add_modifier = {
-				modifier = cs_rapid_construction_t2
-				days = -1
-			}
+			limit = { owner = { has_technology = tech_basic_industry } }
+			add_modifier = { modifier = cs_rapid_construction_t2 days = -1 }
 		}
 		else = {
-			# Tier 1: 200% speed, 200% cost
-			add_modifier = {
-				modifier = cs_rapid_construction_t1
-				days = -1
-			}
+			add_modifier = { modifier = cs_rapid_construction_t1 days = -1 }
 		}
 	}
 
@@ -284,9 +215,10 @@ decision_rapid_construction_enable = {
 	}
 }
 
+# Toggle decision: Disable Rapid Construction Mode
 decision_rapid_construction_disable = {
-	icon = decision_industrial_development
-	sound = event_administrative
+	icon = decision_resources
+	sound = event_administrative_work
 
 	enactment_time = 0
 
@@ -311,63 +243,6 @@ decision_rapid_construction_disable = {
 		remove_modifier = cs_rapid_construction_t3
 		remove_modifier = cs_rapid_construction_t4
 		remove_modifier = cs_rapid_construction_t5
-	}
-
-	ai_weight = {
-		weight = 0
-	}
-}
-
-# Decision: Destroy Habitat
-# Permanently destroys an empty habitat, refunding a small portion of alloys.
-decision_destroy_habitat = {
-	icon = decision_burning_settlement
-	sound = event_structural_collapse
-
-	enactment_time = 30
-
-	resources = {
-		category = decisions
-		cost = {
-			unity = 100
-		}
-	}
-
-	potential = {
-		owner = { is_ai = no }
-		is_planet_class = pc_habitat
-	}
-
-	owned_planets_only = yes
-
-	allow = {
-		# Habitat must be empty
-		custom_tooltip = {
-			fail_text = "decision_destroy_habitat_must_be_empty"
-			num_pops = 0
-		}
-	}
-
-	effect = {
-		# Refund a small portion of alloys
-		owner = {
-			add_resource = { alloys = 200 }
-		}
-		# Destroy the habitat megastructure
-		solar_system = {
-			random_megastructure = {
-				limit = {
-					is_megastructure_type = habitat_3
-				}
-				remove_megastructure = this
-			}
-			random_megastructure = {
-				limit = {
-					is_megastructure_type = habitat_restored
-				}
-				remove_megastructure = this
-			}
-		}
 	}
 
 	ai_weight = {
