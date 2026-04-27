@@ -89,3 +89,109 @@ decision_clear_world = {
 		weight = 0
 	}
 }
+
+decision_expel_population = {
+	icon = decision_resettle_pops
+	sound = event_administrative
+
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+		}
+	}
+
+	potential = {
+		owner = {
+			is_ai = no
+		}
+		# Must have pops to expel
+		num_pops > 0
+	}
+
+	owned_planets_only = yes
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "decision_expel_population_no_destination"
+			owner = {
+				# Either there are other planets in the same sector, or there are other sectors with planets
+				OR = {
+					# Other planets in the same sector
+					any_owned_planet = {
+						NOT = { is_same_value = prev.prev }
+						sector = { is_same_value = prev.prev.sector }
+						num_pops > 0
+					}
+					# Other sectors with planets
+					any_owned_sector = {
+						NOT = { is_same_value = prev.prev.sector }
+						any_owned_planet = {
+							num_pops > 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		planet = {
+			# Check if there are other planets in the same sector
+			if = {
+				limit = {
+					owner = {
+						any_owned_planet = {
+							NOT = { is_same_value = prev.prev }
+							sector = { is_same_value = prev.prev.sector }
+						}
+					}
+				}
+				# Resettle all pop groups to other planets in the same sector
+				every_owned_pop_group = {
+					save_event_target_as = cs_expel_pop_group
+					owner = {
+						random_owned_planet = {
+							limit = {
+								NOT = { is_same_value = prev.prev }
+								sector = { is_same_value = prev.prev.sector }
+							}
+							resettle_pop_group = {
+								POP_GROUP = event_target:cs_expel_pop_group
+								PLANET = this
+							}
+						}
+					}
+				}
+			}
+			else = {
+				# No other planets in this sector — send to a random other sector
+				every_owned_pop_group = {
+					save_event_target_as = cs_expel_pop_group
+					owner = {
+						random_owned_sector = {
+							limit = {
+								NOT = { is_same_value = prev.prev.sector }
+								any_owned_planet = {
+									always = yes
+								}
+							}
+							random_owned_planet = {
+								resettle_pop_group = {
+									POP_GROUP = event_target:cs_expel_pop_group
+									PLANET = this
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

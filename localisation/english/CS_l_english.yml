@@ -8,3 +8,8 @@
 
   cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
   cs_accelerated_purge_protocols_desc:0 "Exotic gases can be weaponised to dramatically accelerate our purge operations, allowing us to process undesirable populations far more efficiently."
+
+  # Decisions
+  decision_expel_population:0 "Expel Population"
+  decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random other sector instead."
+  decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
