@@ -5,3 +5,6 @@
   # Edicts
   cs_accelerated_genetic_modification:0 "Accelerated Genetic Modification"
   cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate the rate at which our population undergoes genetic modification. Sub-species will be integrated into our primary species at an increased rate."
+
+  cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
+  cs_accelerated_purge_protocols_desc:0 "Exotic gases can be weaponised to dramatically accelerate our purge operations, allowing us to process undesirable populations far more efficiently."

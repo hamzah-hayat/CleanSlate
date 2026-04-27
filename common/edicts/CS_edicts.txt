@@ -44,3 +44,49 @@ cs_accelerated_genetic_modification = {
 		weight = 0
 	}
 }
+
+# Edict: Accelerated Purge Protocols
+# Uses exotic gases to increase the rate at which pops are purged
+cs_accelerated_purge_protocols = {
+	length = @CS_EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			exotic_gases = 50
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			exotic_gases = 2
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_purge_speed = 1.0
+	}
+
+	potential = {
+		is_ai = no
+		has_technology = tech_mine_exotic_gases
+		# Must have at least one species being purged
+		any_owned_species = {
+			has_citizenship_type = {
+				country = root
+				type = citizenship_purge
+			}
+		}
+	}
+
+	allow = {
+		has_resource = {
+			type = exotic_gases
+			amount >= 50
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
