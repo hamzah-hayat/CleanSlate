@@ -8,7 +8,6 @@
 policy_subspecies_auto_integration = {
 	potential = {
 		is_ai = no
-		NOT = { is_gestalt = yes }
 		has_technology = tech_gene_tailoring
 	}
 
@@ -17,9 +16,6 @@ policy_subspecies_auto_integration = {
 
 		policy_flags = {
 			subspecies_auto_integration_disabled
-		}
-
-		modifier = {
 		}
 
 		ai_weight = {
@@ -33,10 +29,9 @@ policy_subspecies_auto_integration = {
 		policy_flags = {
 			subspecies_auto_integration_enabled
 		}
-
-		modifier = {
-			subspecies_integration_add = 15
-			subspecies_integration_mult = 0.15
+		
+		on_enabled = {
+			country_event = { id = cs_subspecies.1 }
 		}
 
 		ai_weight = {
