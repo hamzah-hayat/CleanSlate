@@ -1,0 +1,91 @@
+decision_clear_world = {
+	icon = decision_burning_settlement
+	sound = event_structural_collapse
+
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 500
+		}
+	}
+
+	potential = {
+		owner = {
+			is_ai = no
+		}
+	}
+
+	owned_planets_only = yes
+
+	effect = {
+		planet = {
+			# Remove all buildings
+			remove_all_buildings = yes
+			# Remove all districts
+			remove_all_districts = yes
+			# Remove all zone specialisations from all districts
+			every_district = {
+				remove_zone = {
+					district = this
+					all = yes
+				}
+			}
+
+			# Make sure to re-add the capital building
+			hidden_effect = {
+				# We have the following capitals we can re-add
+				# Habitat capitals - Habitats
+				# Standard capitals - Non-Hive Empires
+				# Hive capitals - Hive Empires
+				# Machine Capitals - Machine Empires
+				if = {
+					limit = {
+						is_planet_class = pc_habitat
+					}
+					add_building = building_hab_capital
+				}
+				else_if = {
+					limit = { 
+						owner = {
+							is_regular_empire = yes
+						}
+					}
+					add_building = building_colony_shelter
+				}
+				else_if = {
+					limit = { 
+						owner = {
+							is_hive_empire = yes
+						}
+					}
+					add_building = building_hive_capital
+				}
+				else_if = {
+					limit = { 
+						owner = {
+							is_wilderness_empire = yes
+						}
+					}
+					add_building = building_colony_shelter_wilderness
+				}
+				else_if = {
+					limit = { 
+						owner = {
+							is_machine_empire = yes
+						}
+					}
+					add_building = building_deployment_post
+				}
+
+				# Just in case
+				validate_planet_buildings_and_districts = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
