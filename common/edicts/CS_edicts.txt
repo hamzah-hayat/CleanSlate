@@ -2,42 +2,31 @@
 # Clean Slate Edicts
 ##########################################################################
 
-@CS_EdictPerpetual = -1
-
 # Edict: Accelerated Genetic Modification
 # Uses exotic gases to increase the rate at which pops are genetically modified
 cs_accelerated_genetic_modification = {
-	length = @CS_EdictPerpetual
-	icon = "GFX_edict_type_policy"
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
 
 	resources = {
-		category = edicts
+		category = rare_edicts
 		cost = {
-			exotic_gases = 50
+			exotic_gases = 0.5
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			exotic_gases = 2
+			exotic_gases = 0.5
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		subspecies_integration_add = 25
-		subspecies_integration_mult = 0.25
+		subspecies_integration_add = 50
+		subspecies_integration_mult = 3
 	}
 
-	potential = {
-		is_ai = no
-		NOT = { is_gestalt = yes }
-		has_technology = tech_mine_exotic_gases
-	}
-
-	allow = {
-		has_resource = {
-			type = exotic_gases
-			amount >= 50
-		}
+	prerequisites = {
+		"tech_gene_tailoring"
 	}
 
 	ai_weight = {
@@ -48,17 +37,17 @@ cs_accelerated_genetic_modification = {
 # Edict: Accelerated Purge Protocols
 # Uses exotic gases to increase the rate at which pops are purged
 cs_accelerated_purge_protocols = {
-	length = @CS_EdictPerpetual
-	icon = "GFX_edict_type_policy"
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
 
 	resources = {
-		category = edicts
+		category = rare_edicts
 		cost = {
-			exotic_gases = 50
+			exotic_gases = 0.5
 			multiplier = value:edict_size_effect
 		}
 		upkeep = {
-			exotic_gases = 2
+			exotic_gases = 0.5
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -68,21 +57,16 @@ cs_accelerated_purge_protocols = {
 	}
 
 	potential = {
-		is_ai = no
-		has_technology = tech_mine_exotic_gases
-		# Must have at least one species being purged
-		any_owned_species = {
-			has_citizenship_type = {
-				country = root
-				type = citizenship_purge
+		OR = {
+			# Must have at least one species being purged
+			any_owned_species = {
+				has_citizenship_type = {
+					country = root
+					type = citizenship_purge
+				}
 			}
-		}
-	}
-
-	allow = {
-		has_resource = {
-			type = exotic_gases
-			amount >= 50
+			# Or has purging enabled
+			NOT = { has_policy_flag = purge_not_allowed }
 		}
 	}
 

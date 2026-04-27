@@ -7,11 +7,11 @@
   cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate the rate at which our population undergoes genetic modification. Sub-species will be integrated into our primary species at an increased rate."
 
   cs_accelerated_purge_protocols:0 "Accelerated Purge Protocols"
-  cs_accelerated_purge_protocols_desc:0 "Exotic gases can be weaponised to dramatically accelerate our purge operations, allowing us to process undesirable populations far more efficiently."
+  cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure they remain... compliant throughout the process. No resistance. No delays. Just the quiet efficiency of populations that fade away without struggle. The work proceeds much faster when they can't fight what's coming."
 
   # Decisions
   decision_expel_population:0 "Expel Population"
-  decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random other sector instead."
+  decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random sector instead."
   decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
 
   decision_rapid_construction_enable:0 "Enable Rapid Construction"
