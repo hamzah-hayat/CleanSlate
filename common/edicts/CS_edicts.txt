@@ -1,0 +1,46 @@
+##########################################################################
+# Clean Slate Edicts
+##########################################################################
+
+@CS_EdictPerpetual = -1
+
+# Edict: Accelerated Genetic Modification
+# Uses exotic gases to increase the rate at which pops are genetically modified
+cs_accelerated_genetic_modification = {
+	length = @CS_EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			exotic_gases = 50
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			exotic_gases = 2
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		subspecies_integration_add = 25
+		subspecies_integration_mult = 0.25
+	}
+
+	potential = {
+		is_ai = no
+		NOT = { is_gestalt = yes }
+		has_technology = tech_mine_exotic_gases
+	}
+
+	allow = {
+		has_resource = {
+			type = exotic_gases
+			amount >= 50
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

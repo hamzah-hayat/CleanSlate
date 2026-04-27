@@ -1,3 +1,7 @@
 ﻿l_english:
   decision_clear_world:0 "Clear World"
   decision_clear_world_desc:0 "This world requires a clean slate. We will expedite the removal of all structures and resources, allowing us to start anew."
+
+  # Edicts
+  cs_accelerated_genetic_modification:0 "Accelerated Genetic Modification"
+  cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate the rate at which our population undergoes genetic modification. Sub-species will be integrated into our primary species at an increased rate."
