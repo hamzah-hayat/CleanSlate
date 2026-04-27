@@ -49,3 +49,16 @@
 
   policy_subspecies_auto_integration_enabled:0 "Automatic Integration"
   policy_subspecies_auto_integration_enabled_desc:0 "Sub-species of our primary species will automatically be integrated, gradually merging them into the dominant species. Integration speed is increased."
+
+  # Auto-Build Starbase Policy
+  policy_auto_build_starbases:0 "Automatic Starbase Construction"
+  policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
+
+  policy_auto_build_starbases_disabled:0 "Disabled"
+  policy_auto_build_starbases_disabled_desc:0 "Construction ships will not automatically build starbases."
+
+  policy_auto_build_starbases_adjacent:0 "Adjacent Systems Only"
+  policy_auto_build_starbases_adjacent_desc:0 "Idle construction ships will automatically build starbases in unclaimed systems that are one hyperlane jump from our existing starbases."
+
+  policy_auto_build_starbases_all:0 "All Reachable Systems"
+  policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system within our borders, provided we can afford the influence cost."

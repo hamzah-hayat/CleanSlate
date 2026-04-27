@@ -9,13 +9,11 @@ policy_subspecies_auto_integration = {
 	potential = {
 		is_ai = no
 		NOT = { is_gestalt = yes }
-		# Requires genetic modification technology to manage sub-species
 		has_technology = tech_gene_tailoring
 	}
 
 	option = {
 		name = "policy_subspecies_auto_integration_disabled"
-		icon = "GFX_policy_icon_none"
 
 		policy_flags = {
 			subspecies_auto_integration_disabled
@@ -31,16 +29,60 @@ policy_subspecies_auto_integration = {
 
 	option = {
 		name = "policy_subspecies_auto_integration_enabled"
-		icon = "GFX_policy_icon_none"
 
 		policy_flags = {
 			subspecies_auto_integration_enabled
 		}
 
 		modifier = {
-			# Boost integration speed when the policy is active
 			subspecies_integration_add = 15
 			subspecies_integration_mult = 0.15
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+}
+
+# Policy: Auto-Build Starbases
+# Automatically directs idle construction ships to build starbases in unclaimed systems.
+policy_auto_build_starbases = {
+	potential = {
+		is_ai = no
+		is_country_type = default
+		has_technology = tech_starbase_2
+	}
+
+	option = {
+		name = "policy_auto_build_starbases_disabled"
+
+		policy_flags = {
+			auto_build_starbases_disabled
+		}
+
+		ai_weight = {
+			weight = 100
+		}
+	}
+
+	option = {
+		name = "policy_auto_build_starbases_adjacent"
+
+		policy_flags = {
+			auto_build_starbases_adjacent
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+
+	option = {
+		name = "policy_auto_build_starbases_all"
+
+		policy_flags = {
+			auto_build_starbases_all
 		}
 
 		ai_weight = {
