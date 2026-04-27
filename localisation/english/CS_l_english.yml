@@ -14,6 +14,32 @@
   decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random other sector instead."
   decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
 
+  decision_rapid_construction_enable:0 "Enable Rapid Construction"
+  decision_rapid_construction_enable_desc:0 "Redirect industrial resources to dramatically accelerate construction on this world. Building speed is greatly increased, but so are building costs. The boost scales with our engineering technology. Cannot be activated while buildings are under construction."
+  decision_rapid_construction_no_buildings_under_construction:0 "Cannot activate while buildings are under construction."
+
+  decision_rapid_construction_disable:0 "Disable Rapid Construction"
+  decision_rapid_construction_disable_desc:0 "Return this world's construction operations to normal. Building speed and costs will return to standard levels."
+
+  cs_rapid_construction_t1:0 "Rapid Construction (Tier 1)"
+  cs_rapid_construction_t1_desc:0 "Construction operations have been accelerated. Building speed and costs are increased by 200%."
+
+  cs_rapid_construction_t2:0 "Rapid Construction (Tier 2)"
+  cs_rapid_construction_t2_desc:0 "Advanced construction protocols are in effect. Building speed and costs are increased by 300%."
+
+  cs_rapid_construction_t3:0 "Rapid Construction (Tier 3)"
+  cs_rapid_construction_t3_desc:0 "Optimised construction templates are in use. Building speed and costs are increased by 400%."
+
+  cs_rapid_construction_t4:0 "Rapid Construction (Tier 4)"
+  cs_rapid_construction_t4_desc:0 "Cutting-edge assembly patterns are driving construction. Building speed and costs are increased by 700%."
+
+  cs_rapid_construction_t5:0 "Rapid Construction (Tier 5)"
+  cs_rapid_construction_t5_desc:0 "Maximum construction efficiency achieved. Building speed and costs are increased by 1000%."
+
+  decision_destroy_habitat:0 "Demolish Habitat"
+  decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction. The habitat must be completely empty before demolition can begin."
+  decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
+
   # Policies
   policy_subspecies_auto_integration:0 "Sub-Species Integration"
   policy_subspecies_auto_integration_desc:0 "Determines whether sub-species of our primary species are automatically integrated into the dominant species over time."

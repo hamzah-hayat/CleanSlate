@@ -1,0 +1,40 @@
+##########################################################################
+# Clean Slate Static Modifiers
+##########################################################################
+
+# Rapid Construction tiers — applied by the Rapid Construction decision.
+# Each tier increases building speed AND building cost by the same multiplier.
+# Tier 1: Basic Industry (200% speed, 200% cost)
+cs_rapid_construction_t1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	planet_building_build_speed_mult = 2.0
+	planet_buildings_cost_mult = 2.0
+}
+
+# Tier 2: Assembly Pattern (300% speed, 300% cost)
+cs_rapid_construction_t2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	planet_building_build_speed_mult = 3.0
+	planet_buildings_cost_mult = 3.0
+}
+
+# Tier 3: Construction 1 (400% speed, 400% cost)
+cs_rapid_construction_t3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	planet_building_build_speed_mult = 4.0
+	planet_buildings_cost_mult = 4.0
+}
+
+# Tier 4: Assembly Pattern (700% speed, 700% cost)
+cs_rapid_construction_t4 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	planet_building_build_speed_mult = 7.0
+	planet_buildings_cost_mult = 7.0
+}
+
+# Tier 5: Construction Templates (1000% speed, 1000% cost)
+cs_rapid_construction_t5 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	planet_building_build_speed_mult = 10.0
+	planet_buildings_cost_mult = 10.0
+}
