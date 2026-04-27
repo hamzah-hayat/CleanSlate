@@ -8,3 +8,10 @@ on_monthly_pulse_country = {
 		cs_auto_build.2		# Auto-build hyper relays
 	}
 }
+
+# Triggered when a country finishes researching a technology
+on_tech_increased = {
+	events = {
+		cs_rapid_construction.1		# Upgrade rapid construction tiers
+	}
+}

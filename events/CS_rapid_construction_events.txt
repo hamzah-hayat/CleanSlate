@@ -1,0 +1,54 @@
+##########################################################################
+# Clean Slate Rapid Construction Events
+##########################################################################
+
+namespace = cs_rapid_construction
+
+# Event: Upgrade Rapid Construction Tiers on Tech Research
+# Triggered when a country researches a relevant technology
+# Automatically upgrades the rapid construction modifier on all planets
+country_event = {
+	id = cs_rapid_construction.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			last_increased_tech = "tech_assembly_pattern"
+			last_increased_tech = "tech_construction_templates"
+			last_increased_tech = "tech_mega_engineering"
+		}
+	}
+
+	immediate = {
+		# Loop through all owned planets with rapid construction active
+		every_owned_planet = {
+			limit = {
+				has_planet_flag = cs_rapid_construction_active
+			}
+			
+			# Remove all existing rapid construction modifiers
+			remove_modifier = cs_rapid_construction_t1
+			remove_modifier = cs_rapid_construction_t2
+			remove_modifier = cs_rapid_construction_t3
+			remove_modifier = cs_rapid_construction_t4
+			
+			# Apply the appropriate tier based on current tech level
+			if = {
+				limit = { owner = { has_technology = tech_mega_engineering } }
+				add_modifier = { modifier = cs_rapid_construction_t4 days = -1 }
+			}
+			else_if = {
+				limit = { owner = { has_technology = tech_construction_templates } }
+				add_modifier = { modifier = cs_rapid_construction_t3 days = -1 }
+			}
+			else_if = {
+				limit = { owner = { has_technology = tech_assembly_pattern } }
+				add_modifier = { modifier = cs_rapid_construction_t2 days = -1 }
+			}
+			else = {
+				add_modifier = { modifier = cs_rapid_construction_t1 days = -1 }
+			}
+		}
+	}
+}

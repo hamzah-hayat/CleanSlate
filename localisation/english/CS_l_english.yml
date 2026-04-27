@@ -22,19 +22,16 @@
   decision_rapid_construction_disable_desc:0 "Return this world's construction operations to normal. Building speed and costs will return to standard levels."
 
   cs_rapid_construction_t1:0 "Rapid Construction (Tier 1)"
-  cs_rapid_construction_t1_desc:0 "Construction operations have been accelerated. Building speed and costs are increased by 200%."
+  cs_rapid_construction_t1_desc:0 "Construction operations have been accelerated. Building speed and costs are increased by 250%."
 
   cs_rapid_construction_t2:0 "Rapid Construction (Tier 2)"
-  cs_rapid_construction_t2_desc:0 "Advanced construction protocols are in effect. Building speed and costs are increased by 300%."
+  cs_rapid_construction_t2_desc:0 "Advanced assembly patterns drive construction. Building speed and costs are increased by 500%."
 
   cs_rapid_construction_t3:0 "Rapid Construction (Tier 3)"
-  cs_rapid_construction_t3_desc:0 "Optimised construction templates are in use. Building speed and costs are increased by 400%."
+  cs_rapid_construction_t3_desc:0 "Optimised construction templates enable highly efficient building. Building speed and costs are increased by 750%."
 
   cs_rapid_construction_t4:0 "Rapid Construction (Tier 4)"
-  cs_rapid_construction_t4_desc:0 "Cutting-edge assembly patterns are driving construction. Building speed and costs are increased by 700%."
-
-  cs_rapid_construction_t5:0 "Rapid Construction (Tier 5)"
-  cs_rapid_construction_t5_desc:0 "Maximum construction efficiency achieved. Building speed and costs are increased by 1000%."
+  cs_rapid_construction_t4_desc:0 "Megaengineering techniques enable maximum construction efficiency. Building speed and costs are increased by 1000%."
 
   decision_destroy_habitat:0 "Demolish Habitat"
   decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction. The habitat must be completely empty before demolition can begin."

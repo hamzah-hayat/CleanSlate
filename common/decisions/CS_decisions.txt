@@ -190,19 +190,15 @@ decision_rapid_construction_enable = {
 	effect = {
 		set_planet_flag = cs_rapid_construction_active
 		if = {
-			limit = { owner = { has_technology = tech_construction_templates } }
-			add_modifier = { modifier = cs_rapid_construction_t5 days = -1 }
-		}
-		else_if = {
-			limit = { owner = { has_technology = tech_assembly_pattern } }
+			limit = { owner = { has_technology = tech_mega_engineering } }
 			add_modifier = { modifier = cs_rapid_construction_t4 days = -1 }
 		}
 		else_if = {
-			limit = { owner = { has_technology = tech_global_production_strategy } }
+			limit = { owner = { has_technology = tech_construction_templates } }
 			add_modifier = { modifier = cs_rapid_construction_t3 days = -1 }
 		}
 		else_if = {
-			limit = { owner = { has_technology = tech_basic_industry } }
+			limit = { owner = { has_technology = tech_assembly_pattern } }
 			add_modifier = { modifier = cs_rapid_construction_t2 days = -1 }
 		}
 		else = {
@@ -242,7 +238,6 @@ decision_rapid_construction_disable = {
 		remove_modifier = cs_rapid_construction_t2
 		remove_modifier = cs_rapid_construction_t3
 		remove_modifier = cs_rapid_construction_t4
-		remove_modifier = cs_rapid_construction_t5
 	}
 
 	ai_weight = {
