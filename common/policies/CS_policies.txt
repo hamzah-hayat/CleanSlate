@@ -1,0 +1,50 @@
+##########################################################################
+# Clean Slate Policies
+##########################################################################
+
+# Policy: Sub-Species Auto-Integration
+# Allows the player to set whether sub-species are automatically integrated
+# into the default/primary species over time.
+policy_subspecies_auto_integration = {
+	potential = {
+		is_ai = no
+		NOT = { is_gestalt = yes }
+		# Requires genetic modification technology to manage sub-species
+		has_technology = tech_gene_tailoring
+	}
+
+	option = {
+		name = "policy_subspecies_auto_integration_disabled"
+		icon = "GFX_policy_icon_none"
+
+		policy_flags = {
+			subspecies_auto_integration_disabled
+		}
+
+		modifier = {
+		}
+
+		ai_weight = {
+			weight = 100
+		}
+	}
+
+	option = {
+		name = "policy_subspecies_auto_integration_enabled"
+		icon = "GFX_policy_icon_none"
+
+		policy_flags = {
+			subspecies_auto_integration_enabled
+		}
+
+		modifier = {
+			# Boost integration speed when the policy is active
+			subspecies_integration_add = 15
+			subspecies_integration_mult = 0.15
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+}

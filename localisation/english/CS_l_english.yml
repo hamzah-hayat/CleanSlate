@@ -13,3 +13,13 @@
   decision_expel_population:0 "Expel Population"
   decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random other sector instead."
   decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
+
+  # Policies
+  policy_subspecies_auto_integration:0 "Sub-Species Integration"
+  policy_subspecies_auto_integration_desc:0 "Determines whether sub-species of our primary species are automatically integrated into the dominant species over time."
+
+  policy_subspecies_auto_integration_disabled:0 "No Automatic Integration"
+  policy_subspecies_auto_integration_disabled_desc:0 "Sub-species will not be automatically integrated into the primary species. Their genetic identity will be preserved."
+
+  policy_subspecies_auto_integration_enabled:0 "Automatic Integration"
+  policy_subspecies_auto_integration_enabled_desc:0 "Sub-species of our primary species will automatically be integrated, gradually merging them into the dominant species. Integration speed is increased."
