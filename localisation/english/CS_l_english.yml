@@ -62,3 +62,16 @@
 
   policy_auto_build_starbases_all:0 "All Reachable Systems"
   policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system within our borders, provided we can afford the influence cost."
+
+  # Auto-Build Hyper Relay Policy
+  policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
+  policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
+
+  policy_auto_build_hyper_relays_disabled:0 "Disabled"
+  policy_auto_build_hyper_relays_disabled_desc:0 "Construction ships will not automatically build hyper relays."
+
+  policy_auto_build_hyper_relays_adjacent:0 "Extend Relay Network"
+  policy_auto_build_hyper_relays_adjacent_desc:0 "Idle construction ships will automatically build hyper relays in systems adjacent to our existing relay network."
+
+  policy_auto_build_hyper_relays_all:0 "All Systems Within Borders"
+  policy_auto_build_hyper_relays_all_desc:0 "Idle construction ships will automatically build hyper relays in any system within our borders that does not already have one."

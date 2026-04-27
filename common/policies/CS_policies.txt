@@ -90,3 +90,49 @@ policy_auto_build_starbases = {
 		}
 	}
 }
+
+# Policy: Auto-Build Hyper Relays
+# Automatically directs idle construction ships to build hyper relays in systems within borders.
+policy_auto_build_hyper_relays = {
+	potential = {
+		is_ai = no
+		is_country_type = default
+		has_technology = tech_hyper_relays
+	}
+
+	option = {
+		name = "policy_auto_build_hyper_relays_disabled"
+
+		policy_flags = {
+			auto_build_hyper_relays_disabled
+		}
+
+		ai_weight = {
+			weight = 100
+		}
+	}
+
+	option = {
+		name = "policy_auto_build_hyper_relays_adjacent"
+
+		policy_flags = {
+			auto_build_hyper_relays_adjacent
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+
+	option = {
+		name = "policy_auto_build_hyper_relays_all"
+
+		policy_flags = {
+			auto_build_hyper_relays_all
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+}

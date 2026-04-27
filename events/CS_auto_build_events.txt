@@ -72,3 +72,82 @@ country_event = {
 		}
 	}
 }
+
+# Event 2: Auto-Build Hyper Relays
+# Fires monthly for countries with the auto-build hyper relay policy active.
+# Finds a system within borders without a relay and builds one, provided
+# the empire can afford the alloy cost.
+# Scope: country
+country_event = {
+	id = cs_auto_build.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_technology = tech_hyper_relays
+		OR = {
+			has_policy_flag = auto_build_hyper_relays_adjacent
+			has_policy_flag = auto_build_hyper_relays_all
+		}
+		# Must have at least one idle construction ship
+		any_owned_ship = {
+			is_ship_class = shipclass_constructor
+			is_fleet_idle = yes
+		}
+		# Must be able to afford a hyper relay (base cost is 100 alloys)
+		resource_stockpile_compare = {
+			resource = alloys
+			value >= 100
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { has_policy_flag = auto_build_hyper_relays_adjacent }
+			# Systems adjacent to an existing relay, without one yet
+			random_system_within_border = {
+				limit = {
+					is_owned_by = root
+					NOR = {
+						has_megastructure = hyper_relay
+						has_megastructure = hyper_relay_ruined
+						has_megastructure = hyper_relay_restored
+					}
+					any_neighbor_system = {
+						OR = {
+							has_megastructure = hyper_relay
+							has_megastructure = hyper_relay_restored
+						}
+					}
+				}
+				save_event_target_as = cs_relay_target_system
+			}
+		}
+		else_if = {
+			limit = { has_policy_flag = auto_build_hyper_relays_all }
+			# Any system within borders without a relay
+			random_system_within_border = {
+				limit = {
+					is_owned_by = root
+					NOR = {
+						has_megastructure = hyper_relay
+						has_megastructure = hyper_relay_ruined
+						has_megastructure = hyper_relay_restored
+					}
+				}
+				save_event_target_as = cs_relay_target_system
+			}
+		}
+
+		if = {
+			limit = { exists = event_target:cs_relay_target_system }
+			event_target:cs_relay_target_system = {
+				create_megastructure = {
+					type = hyper_relay
+					owner = root
+				}
+			}
+		}
+	}
+}
