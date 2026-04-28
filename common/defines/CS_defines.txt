@@ -2,7 +2,7 @@
 # Clean Slate Defines Overrides
 ##########################################################################
 
-NGameplay = {
+NPop = {
 	# Reduce the influence surcharge for resettling the last pop from a colony
 	# (i.e. the colony abandon cost) from 200 to 25.
 	RESETTLE_DESTROY_COLONY_COST = 25
