@@ -16,7 +16,7 @@ This version is built for Stellaris Cetus 4.4.*
 [*]Initial Release
 [*]Add Clear World decision — removes all buildings and districts from a planet for 500 Unity
 [*]Add Expel Population decision — resettles all pops to other planets in the same sector (or another sector if last planet) for 25 Influence
-[*]Add Rapid Construction toggle decision — increases building speed at the cost of higher building costs, scaling with engineering tech level (5 tiers)
+[*]Add Rapid Construction toggle decision — increases building speed at the cost of higher building costs, scaling with engineering tech level (4 tiers)
 [*]Add Demolish Habitat decision — permanently destroys an empty habitat and refunds 500 alloys
 [*]Add Genetic/Purging Speed up edits - Speed up sub-species integration or double pop purge speed using exotic gasses
 [/list]
