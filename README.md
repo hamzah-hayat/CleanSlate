@@ -3,7 +3,7 @@
 > **A Quality of Life mod for Stellaris that adds tools for resetting, reorganising, and automating your empire's planets and infrastructure.**
 
 ![Stellaris](https://img.shields.io/badge/Stellaris-v4.3.*-blue)
-![Version](https://img.shields.io/badge/Version-1.0.0-green)
+![Version](https://img.shields.io/badge/Version-1.0.2-green)
 
 ---
 
@@ -62,7 +62,7 @@ A per-planet toggle that dramatically increases building speed at the cost of pr
 Infuses genetic modification facilities with exotic gases to accelerate genetic changes across your population.
 
 - **Activation Cost/Upkeep:** Exotic Gases (scaled by empire size)
-- **Effect:** +50 flat sub-species integration, +300% sub-species integration speed
+- **Effect:** +50 flat sub-species integration, +200% sub-species integration speed
 - Requires: Gene Tailoring technology
 
 ---
@@ -71,7 +71,7 @@ Infuses genetic modification facilities with exotic gases to accelerate genetic 
 Keeps undesirable populations in a compliant state using exotic gases, dramatically accelerating purge operations empire-wide.
 
 - **Activation Cost/Upkeep:** Exotic Gases (scaled by empire size)
-- **Effect:** +100% pop purge speed
+- **Effect:** +200% pop purge speed
 - Requires: At least one species being purged
 
 ---

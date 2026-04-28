@@ -26,3 +26,17 @@ This version is built for Stellaris Cetus 4.4.*
 [list]
 [*]Remove Demolish Habitat decision
 [/list]
+
+[h1]1.0.2[/h1]
+
+[h2]Fixes[/h2]
+[list]
+[*]Fix incorrect define header in CS_defines.txt for edict abandon cost
+[/list]
+
+[h2]Changes[/h2]
+[list]
+[*]Increase district costs when Rapid Construction is active
+[*]Increase Accelerated Purge Protocols speed to +200% pop purge speed (up from +100%)
+[*]Reduce Accelerated Genetic Modification sub-species integration multiplier to +200% (down from +300%)
+[/list]

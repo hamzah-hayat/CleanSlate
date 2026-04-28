@@ -74,7 +74,7 @@ Infuses genetic modification facilities with exotic gases to accelerate genetic 
 
 [list]
 [*][b]Activation Cost/Upkeep:[/b] Exotic Gases (scaled by empire size)
-[*][b]Effect:[/b] +50 flat sub-species integration, +300% sub-species integration speed
+[*][b]Effect:[/b] +50 flat sub-species integration, +200% sub-species integration speed
 [*]Requires: Gene Tailoring technology
 [/list]
 
@@ -83,7 +83,7 @@ Keeps undesirable populations in a compliant state using exotic gases, dramatica
 
 [list]
 [*][b]Activation Cost/Upkeep:[/b] Exotic Gases (scaled by empire size)
-[*][b]Effect:[/b] +100% pop purge speed
+[*][b]Effect:[/b] +200% pop purge speed
 [*]Requires: At least one species being purged
 [/list]
 
