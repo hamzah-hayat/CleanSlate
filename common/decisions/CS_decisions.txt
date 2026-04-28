@@ -29,9 +29,20 @@ cs_decision_clear_world = {
 	effect = {
 		planet = {
 			# Remove all buildings and districts
-			# (zones are automatically cleared when districts are removed)
 			remove_all_buildings = yes
 			remove_all_districts = yes
+
+			# Remove the district specialization as well from the main district (eg city)
+			hidden_effect = {
+				remove_zone = {
+					district = 0
+					zone_slot = 1
+				}
+				remove_zone = {
+					district = 0
+					zone_slot = 2
+				}
+			}
 
 			# Re-add the appropriate capital building
 			hidden_effect = {
