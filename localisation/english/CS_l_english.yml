@@ -34,7 +34,3 @@
   cs_rapid_construction_t4:0 "Rapid Construction (Tier 4)"
   cs_rapid_construction_t4_desc:0 "Principles developed for the grandest megastructures are applied at the planetary scale, compressing timelines that would otherwise span decades into mere months. The resource appetite of such an undertaking is immense."
 
-  cs_decision_destroy_habitat:0 "Demolish Habitat"
-  cs_decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction."
-  cs_decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
-
