@@ -5,5 +5,6 @@ tags={
 	"Economy"
 }
 name="Clean Slate"
+picture="thumbnail.jpg"
 supported_version="v4.3.*"
-picture="thumbnail.png"
+remote_file_id="3716044101"
