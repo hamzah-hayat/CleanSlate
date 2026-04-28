@@ -9,6 +9,7 @@ cs_rapid_construction_t1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	planet_building_build_speed_mult = 2.5
 	planet_buildings_cost_mult = 2.5
+	planet_districts_cost_mult = 2.5
 }
 
 # Tier 2: Assembly Pattern (500% speed, 500% cost)
@@ -16,6 +17,7 @@ cs_rapid_construction_t2 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	planet_building_build_speed_mult = 5.0
 	planet_buildings_cost_mult = 5.0
+	planet_districts_cost_mult = 5.0
 }
 
 # Tier 3: Construction Templates (750% speed, 750% cost)
@@ -23,6 +25,7 @@ cs_rapid_construction_t3 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	planet_building_build_speed_mult = 7.5
 	planet_buildings_cost_mult = 7.5
+	planet_districts_cost_mult = 7.5
 }
 
 # Tier 4: Megaengineering (1000% speed, 1000% cost)
@@ -30,4 +33,5 @@ cs_rapid_construction_t4 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	planet_building_build_speed_mult = 10.0
 	planet_buildings_cost_mult = 10.0
+	planet_districts_cost_mult = 10.0
 }
