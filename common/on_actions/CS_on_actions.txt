@@ -2,13 +2,6 @@
 # Clean Slate On Actions
 ##########################################################################
 
-on_monthly_pulse_country = {
-	events = {
-		cs_auto_build.1		# Auto-build starbases
-		cs_auto_build.2		# Auto-build hyper relays
-	}
-}
-
 # Triggered when a country finishes researching a technology
 on_tech_increased = {
 	events = {

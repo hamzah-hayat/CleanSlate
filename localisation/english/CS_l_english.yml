@@ -38,28 +38,3 @@
   cs_decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction."
   cs_decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
 
-  # Auto-Build Starbase Policy
-  cs_policy_auto_build_starbases:0 "Automatic Starbase Construction"
-  cs_policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
-
-  cs_policy_auto_build_starbases_disabled:0 "Disabled"
-  cs_policy_auto_build_starbases_disabled_desc:0 "Construction ships will not automatically build starbases."
-
-  cs_policy_auto_build_starbases_adjacent:0 "Adjacent Systems Only"
-  cs_policy_auto_build_starbases_adjacent_desc:0 "Idle construction ships will automatically build starbases in unclaimed systems that are one hyperlane jump from our existing starbases."
-
-  cs_policy_auto_build_starbases_all:0 "All Reachable Systems"
-  cs_policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system they can reach, provided we can afford the influence cost."
-
-  # Auto-Build Hyper Relay Policy
-  cs_policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
-  cs_policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
-
-  cs_policy_auto_build_hyper_relays_disabled:0 "Disabled"
-  cs_policy_auto_build_hyper_relays_disabled_desc:0 "Construction ships will not automatically build hyper relays."
-
-  cs_policy_auto_build_hyper_relays_adjacent:0 "Extend Relay Network"
-  cs_policy_auto_build_hyper_relays_adjacent_desc:0 "Idle construction ships will automatically build hyper relays in systems adjacent to our existing relay network."
-
-  cs_policy_auto_build_hyper_relays_all:0 "All Systems Within Borders"
-  cs_policy_auto_build_hyper_relays_all_desc:0 "Idle construction ships will automatically build hyper relays in any system within our borders that does not already have one."
