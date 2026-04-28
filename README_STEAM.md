@@ -65,16 +65,6 @@ A per-planet toggle that dramatically increases building speed at the cost of pr
 [*]Upgrades automatically on all active planets when a relevant tech is researched
 [/list]
 
-[b]🏚️ Demolish Habitat[/b]
-Permanently destroys an empty habitat and refunds a portion of the alloys used to build it. The habitat must have no population before demolition can proceed.
-
-[list]
-[*][b]Cost:[/b] 500 Unity
-[*][b]Enactment Time:[/b] 30 days
-[*][b]Alloy Refund:[/b] 500 alloys (mechanical shipsets) / 250 alloys (biological shipsets)
-[*]Removes all associated megastructure components from the system
-[/list]
-
 [hr][/hr]
 
 [h3]Edicts[/h3]

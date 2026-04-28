@@ -8,7 +8,7 @@
 ---
 
 ## Overview
-Clean Slate gives you a set of practical tools to cut through the tedium of empire management. Whether you want to wipe a planet clean and start fresh, rapidly relocate a population, accelerate construction at a cost, or automate the expansion of your starbase and relay network — this mod has you covered. All features are player-only and designed to complement any playstyle without touching AI behaviour.
+Clean Slate gives you a set of practical tools to cut through the tedium of empire management. Whether you want to wipe a planet clean and start fresh, rapidly relocate a population, or accelerate construction at a cost — this mod has you covered. All features are player-only and designed to complement any playstyle without touching AI behaviour.
 
 ---
 
@@ -51,16 +51,6 @@ A per-planet toggle that dramatically increases building speed at the cost of pr
 - **Enable Cost:** 50 Unity
 - Cannot be activated while buildings are already under construction
 - Upgrades automatically on all active planets when a relevant tech is researched
-
----
-
-#### 🏚️ Demolish Habitat
-Permanently destroys an empty habitat and refunds a portion of the alloys used to build it. The habitat must have no population before demolition can proceed.
-
-- **Cost:** 500 Unity
-- **Enactment Time:** 30 days
-- **Alloy Refund:** 500 alloys (mechanical shipsets) / 250 alloys (biological shipsets)
-- Removes all associated megastructure components from the system
 
 ---
 
