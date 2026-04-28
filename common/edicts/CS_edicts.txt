@@ -22,7 +22,7 @@ cs_accelerated_genetic_modification = {
 
 	modifier = {
 		subspecies_integration_add = 50
-		subspecies_integration_mult = 3
+		subspecies_integration_mult = 2
 	}
 
 	prerequisites = {
@@ -53,7 +53,7 @@ cs_accelerated_purge_protocols = {
 	}
 
 	modifier = {
-		pop_purge_speed = 1.0
+		pop_purge_speed = 2
 	}
 
 	potential = {
