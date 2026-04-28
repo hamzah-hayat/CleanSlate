@@ -2,7 +2,10 @@
 # Clean Slate Decisions
 ##########################################################################
 
-decision_clear_world = {
+# Decision: Clear World
+# Removes all buildings and districts from the planet, then re-adds the appropriate
+# capital building for the owner's empire type. Useful for resetting a planet to a blank slate.
+cs_decision_clear_world = {
 	icon = decision_burning_settlement
 	sound = event_structural_collapse
 
@@ -62,10 +65,76 @@ decision_clear_world = {
 	}
 }
 
-# Decision: Expel Population
+# Decision: Demolish Habitat
+# Permanently destroys an empty habitat, refunding a small portion of alloys.
+# The habitat must have no population before demolition can begin.
+cs_decision_destroy_habitat = {
+	icon = decision_burning_settlement
+	sound = event_structural_collapse
+
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 500
+		}
+	}
+
+	potential = {
+		owner = { is_ai = no }
+		is_planet_class = pc_habitat
+	}
+
+	owned_planets_only = yes
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "cs_decision_destroy_habitat_must_be_empty"
+			is_colony = no
+		}
+	}
+
+	effect = {
+		# Refund alloys based on shipset type
+		# This is by default a 33% refund
+		owner = {
+			if = {
+				limit = {
+					country_uses_bio_ships = yes
+				}
+				add_resource = { alloys = 250 }
+			}
+			else = {
+				add_resource = { alloys = 500 }
+			}
+		}
+
+		# Remove all habitat megastructures in this system
+		solar_system = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = habitat_central_complex
+						is_megastructure_type = habitat_central_complex_restored
+						is_megastructure_type = habitat_major_orbital
+						is_megastructure_type = habitat_minor_orbital
+					}
+				}
+				remove_megastructure = this
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Decision: Relocate Population
 # Resettles all pops on this planet to other planets in the same sector.
 # If this is the only planet in the sector, sends pops to a random other sector.
-decision_expel_population = {
+cs_decision_relocate_population = {
 	icon = decision_expel_population
 	sound = event_administrative_work
 
@@ -88,7 +157,7 @@ decision_expel_population = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = "decision_expel_population_no_destination"
+			fail_text = "cs_decision_relocate_population_no_destination"
 			owner = {
 				count_owned_sector = { count > 1 }
 			}
@@ -96,7 +165,7 @@ decision_expel_population = {
 	}
 
 	effect = {
-		custom_tooltip = decision_expel_population_effect_tooltip
+		custom_tooltip = cs_decision_relocate_population_effect_tooltip
 		hidden_effect = {
 			planet = {
 				# Save planet as event target for comparison
@@ -159,7 +228,7 @@ decision_expel_population = {
 # Toggle decision: Enable Rapid Construction Mode
 # Increases building speed at the cost of increased building costs.
 # Scales with engineering tech level. Cannot be taken while buildings are under construction.
-decision_rapid_construction_enable = {
+cs_decision_rapid_construction_enable = {
 	icon = decision_resources
 	sound = event_administrative_work
 
@@ -181,7 +250,7 @@ decision_rapid_construction_enable = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = "decision_rapid_construction_no_buildings_under_construction"
+			fail_text = "cs_decision_rapid_construction_no_buildings_under_construction"
 			NOT = { has_building_construction = yes }
 		}
 	}
@@ -211,7 +280,7 @@ decision_rapid_construction_enable = {
 }
 
 # Toggle decision: Disable Rapid Construction Mode
-decision_rapid_construction_disable = {
+cs_decision_rapid_construction_disable = {
 	icon = decision_resources
 	sound = event_administrative_work
 
@@ -242,72 +311,6 @@ decision_rapid_construction_disable = {
 		if = {
 			limit = { has_modifier = cs_rapid_construction_t4 }
 			remove_modifier = cs_rapid_construction_t4
-		}
-	}
-
-	ai_weight = {
-		weight = 0
-	}
-}
-
-# Decision: Demolish Habitat
-# Permanently destroys an empty habitat, refunding a small portion of alloys.
-# The habitat must have no population before demolition can begin.
-decision_destroy_habitat = {
-	icon = decision_burning_settlement
-	sound = event_structural_collapse
-
-	enactment_time = 30
-
-	resources = {
-		category = decisions
-		cost = {
-			unity = 500
-		}
-	}
-
-	potential = {
-		owner = { is_ai = no }
-		is_planet_class = pc_habitat
-	}
-
-	owned_planets_only = yes
-
-	allow = {
-		custom_tooltip = {
-			fail_text = "decision_destroy_habitat_must_be_empty"
-			is_colony = no
-		}
-	}
-
-	effect = {
-		# Refund alloys based on shipset type
-		# This is by default a 33% refund
-		owner = {
-			if = {
-				limit = {
-					country_uses_bio_ships = yes
-				}
-				add_resource = { alloys = 250 }
-			}
-			else = {
-				add_resource = { alloys = 500 }
-			}
-		}
-
-		# Remove all habitat megastructures in this system
-		solar_system = {
-			every_megastructure = {
-				limit = {
-					OR = {
-						is_megastructure_type = habitat_central_complex
-						is_megastructure_type = habitat_central_complex_restored
-						is_megastructure_type = habitat_major_orbital
-						is_megastructure_type = habitat_minor_orbital
-					}
-				}
-				remove_megastructure = this
-			}
 		}
 	}
 

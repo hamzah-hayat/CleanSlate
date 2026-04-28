@@ -1,65 +1,65 @@
 ﻿l_english:
-  decision_clear_world:0 "Clear World"
-  decision_clear_world_desc:0 "This world requires a clean slate. We will expedite the removal of all structures and resources, allowing us to start anew."
+  # Decisions
+  cs_decision_clear_world:0 "Clear World"
+  cs_decision_clear_world_desc:0 "This world requires a clean slate. We will expedite the removal of all structures and districts, allowing us to start anew."
 
   # Edicts
   edict_cs_accelerated_genetic_modification:0 "Exotic Gases for Genetic Modification"
   edict_cs_accelerated_genetic_modification_desc:0 "By infusing our genetic modification facilities with exotic gases, we can dramatically accelerate genetic changes across our population."
 
   edict_cs_accelerated_purge_protocols:0 "Exotic Gases for Purging Protocols"
-  edict_cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure that undesirable population groups are kept in a blissfully unaware mental state as we enact our purge protocols, making the overall process much easier for our enforcers."
+  edict_cs_accelerated_purge_protocols_desc:0 "Specialized gases ensure that undesirable population groups are kept in a blissfully unaware mental state as we enact our purge protocols, making the overall process much quicker for our enforcers."
 
-  # Decisions
-  decision_expel_population:0 "Expel Population"
-  decision_expel_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random sector instead."
-  decision_expel_population_no_destination:0 "There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
-  decision_expel_population_effect_tooltip:0 "All population groups on this world will be forcibly resettled to other planets within our sector. If no other planets exist in this sector, they will be dispersed across our empire."
+  cs_decision_relocate_population:0 "Relocate Population"
+  cs_decision_relocate_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random sector instead."
+  cs_decision_relocate_population_no_destination:0 "$TRIGGER_FAIL$There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
+  cs_decision_relocate_population_effect_tooltip:0 "All population groups on this world will be forcibly resettled to other planets within our sector. If no other planets exist in this sector, they will be dispersed across our empire."
 
-  decision_rapid_construction_enable:0 "Enable Rapid Construction"
-  decision_rapid_construction_enable_desc:0 "Redirect industrial resources to dramatically accelerate construction on this world. Building speed is greatly increased, but so are building costs. The boost scales with our engineering technology. Cannot be activated while buildings are under construction."
-  decision_rapid_construction_no_buildings_under_construction:0 "Cannot activate while buildings are under construction."
+  cs_decision_rapid_construction_enable:0 "Enable Rapid Construction"
+  cs_decision_rapid_construction_enable_desc:0 "Redirect industrial resources to dramatically accelerate construction timelines on this world."
+  cs_decision_rapid_construction_no_buildings_under_construction:0 "$TRIGGER_FAIL$Cannot activate while buildings are under construction."
 
-  decision_rapid_construction_disable:0 "Disable Rapid Construction"
-  decision_rapid_construction_disable_desc:0 "Return this world's construction operations to normal. Building speed and costs will return to standard levels."
+  cs_decision_rapid_construction_disable:0 "Disable Rapid Construction"
+  cs_decision_rapid_construction_disable_desc:0 "Return this world's construction operations to normal."
 
   cs_rapid_construction_t1:0 "Rapid Construction (Tier 1)"
-  cs_rapid_construction_t1_desc:0 "Construction operations have been accelerated. Building speed and costs are increased by 250%."
+  cs_rapid_construction_t1_desc:0 "Workers push beyond standard operational limits, drawing on industrial reserves to lay foundations faster than conventional schedules allow. The pace comes at a price — materials are consumed at a far greater rate."
 
   cs_rapid_construction_t2:0 "Rapid Construction (Tier 2)"
-  cs_rapid_construction_t2_desc:0 "Advanced assembly patterns drive construction. Building speed and costs are increased by 500%."
+  cs_rapid_construction_t2_desc:0 "Assembly pattern techniques allow construction crews to coordinate with machine precision, eliminating downtime between phases. The efficiency gains are substantial, though the demand for raw materials scales accordingly."
 
   cs_rapid_construction_t3:0 "Rapid Construction (Tier 3)"
-  cs_rapid_construction_t3_desc:0 "Optimised construction templates enable highly efficient building. Building speed and costs are increased by 750%."
+  cs_rapid_construction_t3_desc:0 "Standardised templates reduce planning overhead to near zero, allowing entire structures to be raised from pre-fabricated components. The sheer throughput required strains supply chains considerably."
 
   cs_rapid_construction_t4:0 "Rapid Construction (Tier 4)"
-  cs_rapid_construction_t4_desc:0 "Megaengineering techniques enable maximum construction efficiency. Building speed and costs are increased by 1000%."
+  cs_rapid_construction_t4_desc:0 "Principles developed for the grandest megastructures are applied at the planetary scale, compressing timelines that would otherwise span decades into mere months. The resource appetite of such an undertaking is immense."
 
-  decision_destroy_habitat:0 "Demolish Habitat"
-  decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction. The habitat must be completely empty before demolition can begin."
-  decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
+  cs_decision_destroy_habitat:0 "Demolish Habitat"
+  cs_decision_destroy_habitat_desc:0 "Dismantle this habitat station entirely, recovering a small portion of the alloys used in its construction."
+  cs_decision_destroy_habitat_must_be_empty:0 "The habitat must have no population before it can be demolished."
 
   # Auto-Build Starbase Policy
-  policy_policy_auto_build_starbases:0 "Automatic Starbase Construction"
-  policy_policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
+  cs_policy_auto_build_starbases:0 "Automatic Starbase Construction"
+  cs_policy_auto_build_starbases_desc:0 "Determines whether idle construction ships will automatically claim and build starbases in unclaimed systems."
 
-  policy_auto_build_starbases_disabled:0 "Disabled"
-  policy_auto_build_starbases_disabled_desc:0 "Construction ships will not automatically build starbases."
+  cs_policy_auto_build_starbases_disabled:0 "Disabled"
+  cs_policy_auto_build_starbases_disabled_desc:0 "Construction ships will not automatically build starbases."
 
-  policy_auto_build_starbases_adjacent:0 "Adjacent Systems Only"
-  policy_auto_build_starbases_adjacent_desc:0 "Idle construction ships will automatically build starbases in unclaimed systems that are one hyperlane jump from our existing starbases."
+  cs_policy_auto_build_starbases_adjacent:0 "Adjacent Systems Only"
+  cs_policy_auto_build_starbases_adjacent_desc:0 "Idle construction ships will automatically build starbases in unclaimed systems that are one hyperlane jump from our existing starbases."
 
-  policy_auto_build_starbases_all:0 "All Reachable Systems"
-  policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system they can reach, provided we can afford the influence cost."
+  cs_policy_auto_build_starbases_all:0 "All Reachable Systems"
+  cs_policy_auto_build_starbases_all_desc:0 "Idle construction ships will automatically build starbases in any unclaimed system they can reach, provided we can afford the influence cost."
 
   # Auto-Build Hyper Relay Policy
-  policy_policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
-  policy_policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
+  cs_policy_auto_build_hyper_relays:0 "Automatic Hyper Relay Construction"
+  cs_policy_auto_build_hyper_relays_desc:0 "Determines whether idle construction ships will automatically build hyper relays in systems within our borders."
 
-  policy_auto_build_hyper_relays_disabled:0 "Disabled"
-  policy_auto_build_hyper_relays_disabled_desc:0 "Construction ships will not automatically build hyper relays."
+  cs_policy_auto_build_hyper_relays_disabled:0 "Disabled"
+  cs_policy_auto_build_hyper_relays_disabled_desc:0 "Construction ships will not automatically build hyper relays."
 
-  policy_auto_build_hyper_relays_adjacent:0 "Extend Relay Network"
-  policy_auto_build_hyper_relays_adjacent_desc:0 "Idle construction ships will automatically build hyper relays in systems adjacent to our existing relay network."
+  cs_policy_auto_build_hyper_relays_adjacent:0 "Extend Relay Network"
+  cs_policy_auto_build_hyper_relays_adjacent_desc:0 "Idle construction ships will automatically build hyper relays in systems adjacent to our existing relay network."
 
-  policy_auto_build_hyper_relays_all:0 "All Systems Within Borders"
-  policy_auto_build_hyper_relays_all_desc:0 "Idle construction ships will automatically build hyper relays in any system within our borders that does not already have one."
+  cs_policy_auto_build_hyper_relays_all:0 "All Systems Within Borders"
+  cs_policy_auto_build_hyper_relays_all_desc:0 "Idle construction ships will automatically build hyper relays in any system within our borders that does not already have one."

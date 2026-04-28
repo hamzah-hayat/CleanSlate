@@ -19,8 +19,8 @@ country_event = {
 	trigger = {
 		is_ai = no
 		OR = {
-			has_policy_flag = auto_build_starbases_adjacent
-			has_policy_flag = auto_build_starbases_all
+			has_policy_flag = cs_auto_build_starbases_adjacent
+			has_policy_flag = cs_auto_build_starbases_all
 		}
 		# Must have at least one idle construction ship
 		any_owned_ship = {
@@ -36,7 +36,7 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { has_policy_flag = auto_build_starbases_adjacent }
+			limit = { has_policy_flag = cs_auto_build_starbases_adjacent }
 			# Systems one jump from an existing starbase, not yet claimed
 			random_system_within_border = {
 				limit = {
@@ -51,7 +51,7 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { has_policy_flag = auto_build_starbases_all }
+			limit = { has_policy_flag = cs_auto_build_starbases_all }
 			random_system_within_border = {
 				limit = {
 					is_owned_by = root
@@ -87,8 +87,8 @@ country_event = {
 		is_ai = no
 		has_technology = tech_hyper_relays
 		OR = {
-			has_policy_flag = auto_build_hyper_relays_adjacent
-			has_policy_flag = auto_build_hyper_relays_all
+			has_policy_flag = cs_auto_build_hyper_relays_adjacent
+			has_policy_flag = cs_auto_build_hyper_relays_all
 		}
 		# Must have at least one idle construction ship
 		any_owned_ship = {
@@ -104,7 +104,7 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { has_policy_flag = auto_build_hyper_relays_adjacent }
+			limit = { has_policy_flag = cs_auto_build_hyper_relays_adjacent }
 			# Systems adjacent to an existing relay, without one yet
 			random_system_within_border = {
 				limit = {
@@ -125,7 +125,7 @@ country_event = {
 			}
 		}
 		else_if = {
-			limit = { has_policy_flag = auto_build_hyper_relays_all }
+			limit = { has_policy_flag = cs_auto_build_hyper_relays_all }
 			# Any system within borders without a relay
 			random_system_within_border = {
 				limit = {

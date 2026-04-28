@@ -4,7 +4,7 @@
 
 # Policy: Auto-Build Starbases
 # Automatically directs idle construction ships to build starbases in unclaimed systems.
-policy_auto_build_starbases = {
+cs_policy_auto_build_starbases = {
 	potential = {
 		is_ai = no
 		is_country_type = default
@@ -12,10 +12,10 @@ policy_auto_build_starbases = {
 	}
 
 	option = {
-		name = "policy_auto_build_starbases_disabled"
+		name = "cs_policy_auto_build_starbases_disabled"
 
 		policy_flags = {
-			auto_build_starbases_disabled
+			cs_auto_build_starbases_disabled
 		}
 
 		ai_weight = {
@@ -24,10 +24,10 @@ policy_auto_build_starbases = {
 	}
 
 	option = {
-		name = "policy_auto_build_starbases_adjacent"
+		name = "cs_policy_auto_build_starbases_adjacent"
 
 		policy_flags = {
-			auto_build_starbases_adjacent
+			cs_auto_build_starbases_adjacent
 		}
 
 		ai_weight = {
@@ -36,10 +36,10 @@ policy_auto_build_starbases = {
 	}
 
 	option = {
-		name = "policy_auto_build_starbases_all"
+		name = "cs_policy_auto_build_starbases_all"
 
 		policy_flags = {
-			auto_build_starbases_all
+			cs_auto_build_starbases_all
 		}
 
 		ai_weight = {
@@ -50,7 +50,7 @@ policy_auto_build_starbases = {
 
 # Policy: Auto-Build Hyper Relays
 # Automatically directs idle construction ships to build hyper relays in systems within borders.
-policy_auto_build_hyper_relays = {
+cs_policy_auto_build_hyper_relays = {
 	potential = {
 		is_ai = no
 		is_country_type = default
@@ -58,10 +58,10 @@ policy_auto_build_hyper_relays = {
 	}
 
 	option = {
-		name = "policy_auto_build_hyper_relays_disabled"
+		name = "cs_policy_auto_build_hyper_relays_disabled"
 
 		policy_flags = {
-			auto_build_hyper_relays_disabled
+			cs_auto_build_hyper_relays_disabled
 		}
 
 		ai_weight = {
@@ -70,10 +70,10 @@ policy_auto_build_hyper_relays = {
 	}
 
 	option = {
-		name = "policy_auto_build_hyper_relays_adjacent"
+		name = "cs_policy_auto_build_hyper_relays_adjacent"
 
 		policy_flags = {
-			auto_build_hyper_relays_adjacent
+			cs_auto_build_hyper_relays_adjacent
 		}
 
 		ai_weight = {
@@ -82,10 +82,10 @@ policy_auto_build_hyper_relays = {
 	}
 
 	option = {
-		name = "policy_auto_build_hyper_relays_all"
+		name = "cs_policy_auto_build_hyper_relays_all"
 
 		policy_flags = {
-			auto_build_hyper_relays_all
+			cs_auto_build_hyper_relays_all
 		}
 
 		ai_weight = {
