@@ -104,7 +104,7 @@ cs_decision_relocate_population = {
 		custom_tooltip = {
 			fail_text = "cs_decision_relocate_population_no_destination"
 			owner = {
-				count_owned_sector = { count > 1 }
+				count_owned_planet = { count > 1 }
 			}
 		}
 	}
@@ -121,6 +121,7 @@ cs_decision_relocate_population = {
 				# Check if there are other planets in the same sector
 				if = {
 					limit = {
+						exists = event_target:cs_expel_source_sector
 						owner = {
 							any_owned_planet = {
 								NOT = { is_same_value = event_target:cs_expel_source_planet }

@@ -12,7 +12,7 @@
 
   cs_decision_relocate_population:0 "Relocate Population"
   cs_decision_relocate_population_desc:0 "Forcibly relocate all inhabitants of this world to other planets within our sector. If this is the only inhabited planet in the sector, the population will be dispersed to planets in a random sector instead."
-  cs_decision_relocate_population_no_destination:0 "$TRIGGER_FAIL$There must be at least one other planet in the sector, or another sector with planets, to receive the expelled population."
+  cs_decision_relocate_population_no_destination:0 "$TRIGGER_FAIL$There must be at least one other planet in your empire to send pops to!"
   cs_decision_relocate_population_effect_tooltip:0 "All population groups on this world will be forcibly resettled to other planets within our sector. If no other planets exist in this sector, they will be dispersed across our empire."
 
   cs_decision_rapid_construction_enable:0 "Enable Rapid Construction"
